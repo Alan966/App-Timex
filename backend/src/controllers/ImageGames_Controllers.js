@@ -9,7 +9,7 @@ const list = (req, res) => {
     let sortBy = req.query.sortBy ? req.query.sortBy : 'name'
 
     ImageGame.find()
-    .select("-photo")
+    .select("-photo") 
     .populate('submenutwo')
     .sort([[sortBy, order]])
     .exec((err, imageGame) => {
